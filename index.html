@@ -19,18 +19,21 @@
         <h1>Task List</h1>
         <div class="row">
             <div class="col">
-                <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">Task name </label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">Task Description </label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">Assign To </label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
-                </div>
+                <form>
+                    <div class="mb-3 form-group">
+                        <label for="formGroupExampleInput" class="form-label">Task name </label>
+                        <input id="taskNameInput" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                    </div>
+                    <div class="mb-3 form-group">
+                        <label for="formGroupExampleInput" class="form-label">Task Description </label>
+                        <input id="taskDescriptionInput" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                    </div>
+                    <div class="mb-3 form-group">
+                        <label for="formGroupExampleInput" class="form-label">Assign To </label>
+                        <input id="taskAssignToInput" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                    </div>
+                    <button id="submitBtn" type="button" class="btn btn-primary">Submit</button>
+                </form>
                 <!--Card Layout-->
                 <h1>Tasks</h1>
                 <div class="list-group">
@@ -100,7 +103,7 @@
     </div>
 
     //Add js link
-    <script src=script.js></script>
+    <script src="index.js"></script>
 </body>
 
 
