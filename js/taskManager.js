@@ -1,3 +1,11 @@
+function render (taskManager) {
+    let taskHtmlList = []
+    taskManager.tasks.array.forEach(element => {
+      let renderedTask = createTaskHtml (element.taskName, element.description, element.assignTo, dueDate, element.status)
+       taskHtmlList.push (renderedTask)
+    });
+}
+
 
 function createTaskHtml (name, description, assignedTo, dueDate='tbd', status) {
     const htmlListItem = ` <a href="#" class="list-group-item list-group-item-action">
