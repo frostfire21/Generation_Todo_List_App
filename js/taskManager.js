@@ -1,5 +1,6 @@
-function render (taskManager) {
+function render(taskManager) {
     let taskHtmlList = []
+
     taskManager.tasks.forEach(element => {
       let renderedTask = createTaskHtml (element.taskName, element.description, element.assignedTo, 'TBD', element.status)
        taskHtmlList.push (renderedTask)
@@ -12,7 +13,7 @@ function render (taskManager) {
 }
 
 
-function createTaskHtml (name, description, assignedTo, dueDate='tbd', status) {
+function createTaskHtml(name, description, assignedTo, dueDate = 'tbd', status) {
     const htmlListItem = ` <a href="#" class="list-group-item list-group-item-action">
     <div class="card" style="width: 18rem;">
         <div class="card-body">
@@ -22,30 +23,31 @@ function createTaskHtml (name, description, assignedTo, dueDate='tbd', status) {
             <p class="card-text">${description}</p>
             <p class="card-text">${status}</p>
             <span class="badge text-bg-primary">In progress</span>
+            <button type="button" class= "done-button" class="btn btn-success">Mark As Done</button>
             <button type="button" class="btn btn-danger">Delete</button>
         </div>
     </div>
 </a>`
-return htmlListItem
-} 
+    return htmlListItem
+}
 
 
-class TaskManager{
-    constructor(currentId = 0){
+class TaskManager {
+    constructor(currentId = 0) {
         this.currentId = currentId;
 
         this.tasks = [];
     }
-    addTask (taskName, description, assignedTo, dueDate, status='TODO') {
+    addTask(taskName, description, assignedTo, dueDate, status = 'TODO') {
         this.currentId++;
-        
+
         let task = {
             id: this.currentId,
-            taskName : taskName,
-            description : description,
-            assignedTo : assignedTo,
-            dueDate : dueDate,
-            status :'TODO'
+            taskName: taskName,
+            description: description,
+            assignedTo: assignedTo,
+            dueDate: dueDate,
+            status: 'TODO'
         }
 
         this.tasks.push(task)

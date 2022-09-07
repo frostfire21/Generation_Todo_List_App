@@ -1,4 +1,3 @@
-
 function validFormFieldInput(event) {
     let taskName = taskNameInput.value;
     let taskDescription = taskDescriptionInput.value;
@@ -9,8 +8,8 @@ function validFormFieldInput(event) {
     let taskDesciptionValid = false;
     let taskAssignedToValid = false;
 
-     //Validating Task Name data
-    if ( (taskName.trim()).length > 0 && (taskName.trim()).length < 60) {
+    //Validating Task Name data
+    if ((taskName.trim()).length > 0 && (taskName.trim()).length < 60) {
         console.log('Task name is valid');
         taskNameValid = true;
     } else {
@@ -18,7 +17,7 @@ function validFormFieldInput(event) {
     }
 
     //Validating Task Description data
-    if ( (taskDescription.trim()).length > 0  && (taskDescription.trim()).length < 280 ) {
+    if ((taskDescription.trim()).length > 0 && (taskDescription.trim()).length < 280) {
         console.log('Your task description is an appropriate');
         taskDesciptionValid = true;
     } else {
@@ -26,7 +25,7 @@ function validFormFieldInput(event) {
     }
 
     //Validating Task Assign To data
-    if ( (assignTo.trim()).length > 0  && (assignTo.trim()).length < 60 ) {
+    if ((assignTo.trim()).length > 0 && (assignTo.trim()).length < 60) {
         console.log('Your assigned person is an appropriate');
         taskAssignedToValid = true;
     } else {
@@ -34,17 +33,19 @@ function validFormFieldInput(event) {
     }
 
     //Checking validation variables
-    if(taskNameValid && taskDesciptionValid && taskAssignedToValid){
+    if (taskNameValid && taskDesciptionValid && taskAssignedToValid) {
         console.log('Form validated succcessfully!')
         
         manager.addTask(taskName, taskDescription, assignTo, 'sometime');
         console.log(manager);
-    }
-    else{
+    } else {
         console.log('Form failed to validate');
     }
     event.preventDefault();
 }
 const form = document.getElementById('taskForm');
 form.addEventListener("submit", validFormFieldInput);
+submitBtn.addEventListener('click', (event) => {
 
+});
+const el = document.querySelector(".done-button");
