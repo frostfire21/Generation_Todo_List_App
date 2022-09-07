@@ -1,9 +1,15 @@
 function render(taskManager) {
     let taskHtmlList = []
-    taskManager.tasks.array.forEach(element => {
-        let renderedTask = createTaskHtml(element.taskName, element.description, element.assignTo, dueDate, element.status)
-        taskHtmlList.push(renderedTask)
+
+    taskManager.tasks.forEach(element => {
+      let renderedTask = createTaskHtml (element.taskName, element.description, element.assignedTo, 'TBD', element.status)
+       taskHtmlList.push (renderedTask)
     });
+    console.log(taskHtmlList); // for testing
+    let renderString = taskHtmlList.join('\n');
+    let taskList = document.getElementById('taskList');
+    console.log(taskList)
+    taskList.innerHTML = renderString;
 }
 
 
@@ -14,6 +20,7 @@ function createTaskHtml(name, description, assignedTo, dueDate = 'tbd', status) 
             <h5 class="card-title">${name}</h5>
             <h6 class="card-subtitle mb-2 text-muted">${assignedTo}</h6>
             <h6 class="card-subtitle mb-2 text-muted">${dueDate}</h6>
+            <p class="card-text">${description}</p>
             <p class="card-text">${status}</p>
             <span class="badge text-bg-primary">In progress</span>
             <button type="button" class= "done-button" class="btn btn-success">Mark As Done</button>
@@ -44,8 +51,11 @@ class TaskManager {
         }
 
         this.tasks.push(task)
+        render(this);
     }
 }
-let manager2 = new TaskManager();
-manager2.addTask('wash dishes', 'dishes to be washed are in the sink', 'mike', 'sometime');
-console.log(manager2.tasks);
+
+ let manager = new TaskManager();
+// manager2.addTask('wash dishes', 'dishes to be washed are in the sink', 'mike', 'sometime');
+// manager2.addTask('clean  closet', 'clean closets', 'daria', 'sometime');
+// manager2.addTask('mop floor', 'floor cleaning ', 'meron', 'sometime');
