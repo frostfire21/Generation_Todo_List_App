@@ -36,7 +36,7 @@ function validFormFieldInput(event) {
     //Checking validation variables
     if(taskNameValid && taskDesciptionValid && taskAssignedToValid){
         console.log('Form validated succcessfully!')
-        let manager = new TaskManager();
+        
         manager.addTask(taskName, taskDescription, assignTo, 'sometime');
         console.log(manager);
     }
