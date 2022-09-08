@@ -1,4 +1,7 @@
 function validFormFieldInput(event) {
+    let dueDate = document.getElementById('dateInput');
+    let dateValue = dueDate.valueAsNumber;
+
     let taskName = taskNameInput.value;
     let taskDescription = taskDescriptionInput.value;
     let assignTo = taskAssignToInput.value;
@@ -35,8 +38,8 @@ function validFormFieldInput(event) {
     //Checking validation variables
     if (taskNameValid && taskDesciptionValid && taskAssignedToValid) {
         console.log('Form validated succcessfully!')
-        
-        manager.addTask(taskName, taskDescription, assignTo, 'sometime');
+        console.log('Date is:  ' + dateValue);
+        manager.addTask(taskName, taskDescription, assignTo, dateValue);
         console.log(manager);
     } else {
         console.log('Form failed to validate');

@@ -2,7 +2,8 @@ function render(taskManager) {
     let taskHtmlList = []
 
     taskManager.tasks.forEach(element => {
-        let renderedTask = createTaskHtml(element.taskName, element.description, element.assignedTo, 'TBD', element.status)
+        let formattedDate = new Date(element.dueDate).toLocaleDateString() ;
+        let renderedTask = createTaskHtml(element.taskName, element.description, element.assignedTo, formattedDate, element.status)
         taskHtmlList.push(renderedTask)
     });
     console.log(taskHtmlList); // for testing
