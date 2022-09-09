@@ -25,6 +25,10 @@ What are the steps required to install your project? Provide a step-by-step desc
 
 Provide instructions and examples for use. Include screenshots as needed.
 
+```md
+![Task List App](assets/images/task_List_only.jpg)
+```
+
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
 
     ```md
@@ -34,9 +38,11 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 ## Credits
 
 Yohannes Bahta - 
-Biniam Efrem - 
-Meron Mekuria - 
-Michael Efughu - 
+Biniam Efrem - (https://github.com/biniam1211)
+Michael Efughu - (https://github.com/frostfire21)
+Meron Mekuria -(https://github.com/meronzenebe1)
+Daria Sanchez - (https://github.com/daria-sanchez)
+
 
 
 If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
