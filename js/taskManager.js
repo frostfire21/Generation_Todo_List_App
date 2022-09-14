@@ -33,6 +33,7 @@ function createTaskHtml(id, name, description, assignedTo, dueDate = 'tbd', stat
 }
 
 
+
 class TaskManager {
     constructor(currentId = 0) {
         this.currentId = currentId;
@@ -52,9 +53,10 @@ class TaskManager {
         }
 
         this.tasks.push(task)
+        this.save();
         render(this);
     }
-     getTaskById(taskId){
+    getTaskById(taskId){
         let foundTask;
         for(let i=0; i < this.tasks.length; i++){
             if (this.tasks[i].id === taskId){
@@ -66,9 +68,25 @@ class TaskManager {
         }
         return foundTask;
     }
+    save(){
+        let tasksJson = JSON.stringify(this.tasks);
+        localStorage.setItem('tasks', tasksJson);
+        let currentId = this.currentId.toString();
+        localStorage.setItem('currentId', currentId);
+    }
+    load(){
+        if(localStorage.getItem('tasks') != null){
+            let tasksJson = localStorage.getItem('tasks');
+            this.tasks = JSON.parse(tasksJson);
+        }
+        else{console.log('task is null')}
+        
+        if(localStorage.getItem('currentId') != null){
+            let currentId = localStorage.getItem('currentId');
+            this.currentId = Number(currentId);
+        }
+    }
 }
-
 let manager = new TaskManager();
-// manager2.addTask('wash dishes', 'dishes to be washed are in the sink', 'mike', 'sometime');
-// manager2.addTask('clean  closet', 'clean closets', 'daria', 'sometime');
-// manager2.addTask('mop floor', 'floor cleaning ', 'meron', 'sometime');
+manager.load();
+render(manager);
