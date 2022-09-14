@@ -60,12 +60,12 @@ taskList.addEventListener('click', (event) => {
         console.log(event.target.parentElement.parentElement);
         let parentTask = event.target.parentElement.parentElement;
         
-        
         let taskId = parseInt(parentTask.getAttribute("id"));
 
         console.log("task id is: " + taskId)
         let task = manager.getTaskById(taskId);
         task.status='DONE';
+        manager.save();
         render(manager);
     }
 });
