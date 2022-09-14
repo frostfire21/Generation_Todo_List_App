@@ -57,15 +57,22 @@ let taskList = document.getElementById("taskList");
 
 taskList.addEventListener('click', (event) => {
     if(event.target.classList.contains("done-button")){
-        console.log(event.target.parentElement.parentElement);
         let parentTask = event.target.parentElement.parentElement;
         
         let taskId = parseInt(parentTask.getAttribute("id"));
-
-        console.log("task id is: " + taskId)
         let task = manager.getTaskById(taskId);
         task.status='DONE';
         manager.save();
         render(manager);
     }
 });
+
+taskList.addEventListener('click', (event) => {
+    if(event.target.classList.contains("delete-button")){
+        let parentTask = event.target.parentElement.parentElement;
+        let taskId = parseInt(parentTask.getAttribute("id"));
+        manager.deleteTask(taskId);
+        manager.save();
+        render(manager);
+    }
+})
