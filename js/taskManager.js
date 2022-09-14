@@ -24,7 +24,7 @@ function createTaskHtml(id, name, description, assignedTo, dueDate = 'tbd', stat
             <p class="card-text">${description}</p>
             <p class="card-text">${status}</p>
             <span class="badge text-bg-primary">In progress</span>
-            <button type="button" class="btn btn-danger">Delete</button>
+            <button type="button" class="btn btn-danger delete-button">Delete</button>
             <button type="button" class="done-button btn btn-success" class="">Mark As Done</button>
         </div>
     </div>
@@ -86,6 +86,20 @@ class TaskManager {
             this.currentId = Number(currentId);
         }
     }
+    deleteTask(taskId){
+        console.log('start')
+        let newTasks = [];
+        for (let i = 0; i < this.tasks.length; i++){
+            if(taskId != this.tasks[i].id){
+                newTasks.push(this.tasks[i]);
+            }
+            else{
+               //Do nothing
+            }
+        }
+        this.tasks = newTasks;
+    }
+    
 }
 let manager = new TaskManager();
 manager.load();
