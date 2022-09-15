@@ -19,7 +19,7 @@
     <div class="alertContainer"></div>
     <div class="container">
         
-        <h1>Task List</h1>
+        <h1 class="text-center">Task List</h1>
         <div class="row">
             <div class="col">
                 <form id="taskForm">
@@ -40,21 +40,21 @@
                         </p>
                         <div class="mb-3 form-group">
                             <label for="formGroupExampleInput" class="form-label">Status </label>
-                            <select id="myList" onchange="status()">
-                                <option> ---Choose Status--- </option>  
-                                <option> Inprogress </option>  
+                            <select id="statusDropdown" onchange="status()">
+                                <option> In progress </option>  
                                 <option> Not started </option>  
-                                <option> Todo </option>  
-                                <option> Complete </option>  
-                                <option> Onhold </option>  
+                                <option> To Do </option>  
+                                <option> On hold </option>  
                             </select>
                         </div>
                     </div>
                     <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
                 </form>
                 <!--Card Layout-->
-                <h1>Tasks</h1>
-                <div id="taskList" class="list-group">
+                <h1 class="text-center">Tasks</h1>
+                    <div class="alertContainer">
+                        <div id="taskList" class="list-group">
+                    </div>
                 </div>
             </div>
         </div>

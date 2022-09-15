@@ -15,17 +15,21 @@ function render(taskManager) {
 
 
 function createTaskHtml(id, name, description, assignedTo, dueDate = 'tbd', status) {
-    const htmlListItem = ` <a href="#" class="list-group-item list-group-item-action">
-    <div id=${id} class="card" style="width: 18rem;">
+    const htmlListItem = ` <a href="#" class="list-group-item list-group-item-action d-flex justify-content-center">
+    <div id=${id} class="card" >
         <div class="card-body">
-            <h5 class="card-title">${name}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">${assignedTo}</h6>
-            <h6 class="card-subtitle mb-2 text-muted">${dueDate}</h6>
-            <p class="card-text">${description}</p>
-            <p class="card-text">${status}</p>
-            <span class="badge text-bg-primary">In progress</span>
-            <button type="button" class="btn btn-danger delete-button">Delete</button>
-            <button type="button" class="done-button btn btn-success" class="">Mark As Done</button>
+            <div class=" card-title-row d-flex justify-content-between">
+                    <h5 class="card-title ">${name}</h5> <span class="badge text-bg-primary">${status}</span>
+            </div>
+            <div class=" card-date-row d-flex justify-content-between">
+                <h6 class="card-subtitle mb-2 text-muted">Date Due: ${dueDate}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Assignee: ${assignedTo}</h6>
+            </div>
+            <p class=" card-btn-row card-text">${description}</p>
+            <div class="d-flex justify-content-between">
+                <span type="button" class="done-button btn btn-sm btn-success">Mark As Done</span>
+                <span type="button" class="btn btn-sm btn-danger delete-button">Delete</span>
+            </div>
         </div>
     </div>
 </a>`
@@ -49,7 +53,7 @@ class TaskManager {
             description: description,
             assignedTo: assignedTo,
             dueDate: dueDate,
-            status: 'TODO'
+            status: status
         }
 
         this.tasks.push(task)
