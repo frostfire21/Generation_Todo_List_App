@@ -34,21 +34,27 @@
                     <div class="mb-3 form-group">
                         <label for="formGroupExampleInput" class="form-label">Assign To </label>
                         <input id="taskAssignToInput" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
-                        <p>
-                            <label for="formGroupExampleInput" class="form-label">Due Date</label>
-                            <input type="date" id="dateInput">
-                        </p>
-                        <div class="mb-3 form-group">
-                            <label for="formGroupExampleInput" class="form-label">Status </label>
-                            <select id="statusDropdown" onchange="status()">
-                                <option> In progress </option>  
-                                <option> Not started </option>  
-                                <option> To Do </option>  
-                                <option> On hold </option>  
-                            </select>
+                        <div id="selected-input-group" class="d-flex justify-content-center">
+                            <div class="col-7">
+                                <div class="row">
+                                    <label for="formGroupExampleInput" class="form-label">Due Date</label>
+                                    <input type="date" id="dateInput">
+                                </div>
+                                <div class="mb-3 form-group row">
+                                    <label for="formGroupExampleInput" class="form-label">Status </label>
+                                    <select id="statusDropdown" onchange="status()">
+                                        <option> In progress </option>  
+                                        <option> Not started </option>  
+                                        <option> To Do </option>  
+                                        <option> On hold </option>  
+                                    </select>
+                                </div>
+                            <div class="row"> <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button></div>
+                        </div>
+                           
                         </div>
                     </div>
-                    <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
+                    
                 </form>
                 <!--Card Layout-->
                 <h1 class="text-center">Tasks</h1>
