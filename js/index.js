@@ -11,12 +11,15 @@ function validFormFieldInput(event) {
     let taskDesciptionValid = false;
     let taskAssignedToValid = false;
 
+    //Alert Array for for alerts to display
+    let alertArray=[];
+
     //Validating Task Name data
     if ((taskName.trim()).length > 0 && (taskName.trim()).length < 60) {
         console.log('Task name is valid');
         taskNameValid = true;
     } else {
-        console.log('Please enter a taskName of the 1 between 60 characters.');
+        alertArray.push(getTaskNameAlert());
     }
 
     //Validating Task Description data
@@ -25,15 +28,17 @@ function validFormFieldInput(event) {
         taskDesciptionValid = true;
     } else {
         console.log('Please enter a task description 1 between 280 characters.');
+        alertArray.push(getTaskDescAlert());
     }
 
     //Validating Task Assign To data
     if ((assignTo.trim()).length > 0 && (assignTo.trim()).length < 60) {
-        console.log('Your assigned person is an appropriate');
         taskAssignedToValid = true;
     } else {
-        console.log('Please enter a assigned person\'s name should be 1 between 60 characters.');
+        alertArray.push(getTaskAssignedToAlert());
     }
+    //Displaying Alerts
+    showAlerts(alertArray);
 
     //Checking validation variables
     if (taskNameValid && taskDesciptionValid && taskAssignedToValid) {
@@ -54,6 +59,37 @@ submitBtn.addEventListener('click', (event) => {
 const el = document.querySelector(".done-button");
 
 let taskList = document.getElementById("taskList");
+
+function showAlerts(htmlAlertArray){
+    let alertHtmlString = htmlAlertArray.join('\n');
+    let alertContainter = document.querySelector('.alertContainer');
+    alertContainter.innerHTML = alertHtmlString;
+}
+
+function getTaskNameAlert(){
+    let alertDiv = 
+        `<div id="taskNameAlert" class="alert alert-danger alert-dismissable" role="alert"> 
+            <span>Please enter a name for the task 1 between 1 and 60 characters.</span>
+            <button class="btn-close" type="button" data-bs-dismiss="alert"><span aria-hidden="true"></span></button>
+        </div>`;
+        return alertDiv;
+}
+function getTaskDescAlert(){
+    let alertDiv = 
+        `<div id="taskDescAlert" class="alert alert-danger alert-dismissable" role="alert"> 
+            <span>Please enter a task description between 1 and 280 characters.</span>
+            <button class="btn-close" type="button" data-bs-dismiss="alert"><span aria-hidden="true"></span></button>
+        </div>`;
+        return alertDiv;
+}
+function getTaskAssignedToAlert(){
+    let alertDiv = 
+        `<div id="taskAssignedToAlert" class="alert alert-danger alert-dismissable" role="alert"> 
+            <span>Please enter a assigned person\'s name etween 1 and 60 characters.</span>
+            <button class="btn-close" type="button" data-bs-dismiss="alert"><span aria-hidden="true"></span></button>
+        </div>`;
+        return alertDiv;
+}
 
 taskList.addEventListener('click', (event) => {
     if(event.target.classList.contains("done-button")){
