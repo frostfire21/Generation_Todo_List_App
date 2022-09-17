@@ -4,7 +4,21 @@
     background-color: aliceblue;
     border-radius: 7px;
 }
-
+.card{
+    width: 20rem;
+}
+.card-title-row{
+    margin-bottom: 0.5rem;;
+}
+.card-date-row{
+    margin-bottom: 0.2rem;;
+}
+.card-btn-row{
+    margin-bottom: 1rem;;
+}
 .form-label {
     padding-top: 5%;
+}
+#selected-input-group{
+    margin-bottom: 2rem;
 }

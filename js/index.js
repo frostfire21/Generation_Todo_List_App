@@ -1,10 +1,13 @@
 function validFormFieldInput(event) {
+    console.log(statusDropdown.value );
     let dueDate = document.getElementById('dateInput');
     let dateValue = dueDate.valueAsNumber;
 
     let taskName = taskNameInput.value;
     let taskDescription = taskDescriptionInput.value;
     let assignTo = taskAssignToInput.value;
+    let status = statusDropdown.value;
+    //let statusDropdown = task
 
     //Input field validation boolean variables
     let taskNameValid = false;
@@ -44,7 +47,7 @@ function validFormFieldInput(event) {
     if (taskNameValid && taskDesciptionValid && taskAssignedToValid) {
         console.log('Form validated succcessfully!')
         console.log('Date is:  ' + dateValue);
-        manager.addTask(taskName, taskDescription, assignTo, dateValue);
+        manager.addTask(taskName, taskDescription, assignTo, dateValue, status);
         console.log(manager);
     } else {
         console.log('Form failed to validate');
@@ -68,7 +71,7 @@ function showAlerts(htmlAlertArray){
 
 function getTaskNameAlert(){
     let alertDiv = 
-        `<div id="taskNameAlert" class="alert alert-danger alert-dismissable" role="alert"> 
+        `<div id="taskNameAlert" class="alert alert-danger alert-dismissable text-center" role="alert"> 
             <span>Please enter a name for the task 1 between 1 and 60 characters.</span>
             <button class="btn-close" type="button" data-bs-dismiss="alert"><span aria-hidden="true"></span></button>
         </div>`;
@@ -76,7 +79,7 @@ function getTaskNameAlert(){
 }
 function getTaskDescAlert(){
     let alertDiv = 
-        `<div id="taskDescAlert" class="alert alert-danger alert-dismissable" role="alert"> 
+        `<div id="taskDescAlert" class="alert alert-danger alert-dismissable text-center" role="alert"> 
             <span>Please enter a task description between 1 and 280 characters.</span>
             <button class="btn-close" type="button" data-bs-dismiss="alert"><span aria-hidden="true"></span></button>
         </div>`;
@@ -84,7 +87,7 @@ function getTaskDescAlert(){
 }
 function getTaskAssignedToAlert(){
     let alertDiv = 
-        `<div id="taskAssignedToAlert" class="alert alert-danger alert-dismissable" role="alert"> 
+        `<div id="taskAssignedToAlert" class="alert alert-danger alert-dismissable text-center" role="alert"> 
             <span>Please enter a assigned person\'s name etween 1 and 60 characters.</span>
             <button class="btn-close" type="button" data-bs-dismiss="alert"><span aria-hidden="true"></span></button>
         </div>`;
@@ -93,22 +96,24 @@ function getTaskAssignedToAlert(){
 
 taskList.addEventListener('click', (event) => {
     if(event.target.classList.contains("done-button")){
-        let parentTask = event.target.parentElement.parentElement;
+        let parentTask = event.target.parentElement.parentElement.parentElement;
         
         let taskId = parseInt(parentTask.getAttribute("id"));
         let task = manager.getTaskById(taskId);
-        task.status='DONE';
+        task.status='Done';
         manager.save();
         render(manager);
+        event.preventDefault(); //Prevents page from scrolling up on click
     }
 });
 
 taskList.addEventListener('click', (event) => {
     if(event.target.classList.contains("delete-button")){
-        let parentTask = event.target.parentElement.parentElement;
+        let parentTask = event.target.parentElement.parentElement.parentElement;
         let taskId = parseInt(parentTask.getAttribute("id"));
         manager.deleteTask(taskId);
         manager.save();
         render(manager);
+        event.preventDefault(); //Prevents page from scrolling up on click
     }
 })
