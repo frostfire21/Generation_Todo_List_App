@@ -11,7 +11,7 @@
 - [Installation](#installation)
 - [App Features](#app-features)
 - [Usage](#usage)
-- [Tools and Languages](#tools-and-languages)
+- [Tools, Languages, and Technologies used](#tools-languages-and-technologies-used)
 - [Credits](#credits)
 - [License](#license)
 
