@@ -2,14 +2,13 @@ function render(taskManager) {
     let taskHtmlList = []
 
     taskManager.tasks.forEach(element => {
-        let formattedDate = new Date(element.dueDate).toLocaleDateString() ;
+        //toLocaleDateString requires parameters 'en-Us' and timezone UTC to display dates correctly
+        let formattedDate = new Date(element.dueDate).toLocaleDateString('en-US', { timeZone: "UTC" });
         let renderedTask = createTaskHtml(element.id, element.taskName, element.description, element.assignedTo, formattedDate, element.status)
         taskHtmlList.push(renderedTask)
     });
-    console.log(taskHtmlList); // for testing
     let renderString = taskHtmlList.join('\n');
     let taskList = document.getElementById('taskList');
-    console.log(taskList)
     taskList.innerHTML = renderString;
 }
 
@@ -91,7 +90,6 @@ class TaskManager {
         }
     }
     deleteTask(taskId){
-        console.log('start')
         let newTasks = [];
         for (let i = 0; i < this.tasks.length; i++){
             if(taskId != this.tasks[i].id){
