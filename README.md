@@ -33,11 +33,13 @@ Provide instructions and examples for use. Include screenshots as needed.
 
 ## Development Process
 
-Version 1 - Layout
+Initial Wireframe
 
 ![Task List App](/Generation_Todo_List_App/assets/images/task_List_only.jpg)
 
-Version 2 - Final Product
+Final Product
+
+![Task List App - Final](/Generation_Todo_List_App/assets/images/todo_app_final.jpg)
 
 ## Tools, Languages, and Technologies used
 
@@ -53,9 +55,9 @@ Version 2 - Final Product
 
 - Biniam Efrem - @biniam1211 / (https://www.linkedin.com/in/biniam-efrem-910aab209/)
 - Michael Efughu - @frostfire21 / (https://www.linkedin.com/in/michael-efughu-pub/)
-- Meron Mekuria - @meronzenebe1
+- Meron Mekuria - @meronzenebe1  /  (https://www.linkedin.com/in/meron-ze/)
 - Daria Sanchez - @daria-sanchez / (https://www.linkedin.com/in/daria-sanchez/)
 
 ## License
 
-Team 5 - Please review this link and choose a license.  Thank you. [https://choosealicense.com/](https://choosealicense.com/).
+To be determined at a later date: [https://choosealicense.com/](https://choosealicense.com/).
