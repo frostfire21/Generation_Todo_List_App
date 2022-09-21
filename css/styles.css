@@ -1,7 +1,7 @@
 .container {
     max-width: 405px;
     margin: 135px auto;
-    background-color: aliceblue;
+    background-color: #c0e2ff;
     border-radius: 7px;
 }
 .card{
@@ -19,6 +19,9 @@
 .form-label {
     padding-top: 5%;
 }
+.list-group-item {
+    margin-bottom: 1rem;
+    }
 #selected-input-group{
     margin-bottom: 2rem;
 }

@@ -1,7 +1,6 @@
 function validFormFieldInput(event) {
-    console.log(statusDropdown.value );
     let dueDate = document.getElementById('dateInput');
-    let dateValue = dueDate.valueAsNumber;
+    let dateValue = new Date(dueDate.value);
 
     let taskName = taskNameInput.value;
     let taskDescription = taskDescriptionInput.value;
