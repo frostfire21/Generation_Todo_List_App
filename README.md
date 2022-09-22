@@ -31,11 +31,11 @@ No installation is required.  Instructions will be provided in tandem with futur
 
 Initial Wireframe
 
-![Task List App](/Generation_Todo_List_App/assets/images/task_List_only.jpg)
+![image info](./assets/images/task_List_only.jpg)
 
 Final Product
 
-![Task List App - Final](/Generation_Todo_List_App/assets/images/todo_app_final.jpg)
+![image info](./assets/images/todo_app_final.jpg)
 
 ## Tools, Languages, and Technologies used
 
