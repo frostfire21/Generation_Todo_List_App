@@ -29,7 +29,8 @@ No installation is required.  Instructions will be provided in tandem with futur
 
 ## Product Design/Layout
 
-![Task List App - Final](/Generation_Todo_List_App/assets/images/todo_app_final.jpg)
+
+![image info](./assets/images/todo_app_final.jpg)
 
 ## Tools, Languages, and Technologies used
 
