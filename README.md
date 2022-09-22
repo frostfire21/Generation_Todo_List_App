@@ -1,16 +1,16 @@
-# Group 5 - Generation USA / Jr. Web Developer Program
+# Group 5 - Generation USA
+# Junior Web Developer Program
 ## Final Project - To-do List / Task Planner Web Application 
-
+&ensp;
 ## Description
 
 - Create a Task Planner web application from scratch.
-- Demonstrate the technical and non-technical skills developed during the Jr. Web Developer program.
+- Demonstrate the technical and non-technical skills developed during the Junior Web Developer program.
 
-## Table of Contents (Optional)
+## Table of Contents
 
 - [Installation](#installation)
 - [App Features](#app-features)
-- [Usage](#usage)
 - [Tools, Languages, and Technologies used](#tools-languages-and-technologies-used)
 - [Credits](#credits)
 - [License](#license)
@@ -26,10 +26,6 @@ No installation is required.  Instructions will be provided in tandem with futur
 - Edit task text
 - Add a completion date to a task
 - Delete a task
-
-## Usage
-
-Provide instructions and examples for use. Include screenshots as needed.
 
 ## Development Process
 
@@ -60,4 +56,4 @@ Final Product
 
 ## License
 
-To be determined at a later date: [https://choosealicense.com/](https://choosealicense.com/).
+To be determined: [https://choosealicense.com/](https://choosealicense.com/).
