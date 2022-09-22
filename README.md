@@ -27,13 +27,8 @@ No installation is required.  Instructions will be provided in tandem with futur
 - Add a completion date to a task
 - Delete a task
 
-## Development Process
+## Product Design/Layout
 
-Initial Wireframe
-
-![image info](./assets/images/task_List_only.jpg)
-
-Final Product
 
 ![image info](./assets/images/todo_app_final.jpg)
 
