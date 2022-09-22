@@ -27,10 +27,6 @@ No installation is required.  Instructions will be provided in tandem with futur
 - Add a completion date to a task
 - Delete a task
 
-## Product Design/Layout
-
-![Task List App - Final](/Generation_Todo_List_App/assets/images/todo_app_final.jpg)
-
 ## Tools, Languages, and Technologies used
 
 - HTML
