@@ -17,6 +17,7 @@ function createTaskHtml(id, name, description, assignedTo, dueDate = 'tbd', stat
     const htmlListItem = ` <a href="#" class="list-group-item list-group-item-action d-flex justify-content-center">
     <div id=${id} class="card" >
         <div class="card-body">
+<<<<<<< Updated upstream
             <div class=" card-title-row d-flex justify-content-between">
                     <h5 class="card-title ">${name}</h5> <span class="badge text-bg-primary">${status}</span>
             </div>
@@ -29,12 +30,21 @@ function createTaskHtml(id, name, description, assignedTo, dueDate = 'tbd', stat
                 <span type="button" class="done-button btn btn-sm btn-success">Mark As Done</span>
                 <span type="button" class="btn btn-sm btn-danger delete-button">Delete</span>
             </div>
+=======
+            <h5 class="card-title">${name}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">${assignedTo}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">${dueDate}</h6>
+            <p class="card-text">${description}</p>
+            <p class="card-text">${status}</p>
+            <span class="badge text-bg-primary">In progress</span>
+            <button type="button" class="btn btn-danger">Delete</button>
+            <button type="button" class="done-button btn btn-success" class="">Mark As Done</button>
+
         </div>
     </div>
 </a>`
     return htmlListItem
 }
-
 
 
 class TaskManager {
@@ -56,10 +66,9 @@ class TaskManager {
         }
 
         this.tasks.push(task)
-        this.save();
         render(this);
     }
-    getTaskById(taskId){
+     getTaskById(taskId){
         let foundTask;
         for(let i=0; i < this.tasks.length; i++){
             if (this.tasks[i].id === taskId){
@@ -71,6 +80,7 @@ class TaskManager {
         }
         return foundTask;
     }
+
     save(){
         let tasksJson = JSON.stringify(this.tasks);
         localStorage.setItem('tasks', tasksJson);
@@ -102,7 +112,10 @@ class TaskManager {
         this.tasks = newTasks;
     }
     
+
 }
+
 let manager = new TaskManager();
-manager.load();
-render(manager);
+// manager2.addTask('wash dishes', 'dishes to be washed are in the sink', 'mike', 'sometime');
+// manager2.addTask('clean  closet', 'clean closets', 'daria', 'sometime');
+// manager2.addTask('mop floor', 'floor cleaning ', 'meron', 'sometime');
